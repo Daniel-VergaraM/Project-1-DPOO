@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.LinkedList;
 
 import consola.ProfessorConsola;
-import consola.StudentConsola;
 import controller.ProfessorController;
 import learningpath.*;
 import learningpath.activity.*;

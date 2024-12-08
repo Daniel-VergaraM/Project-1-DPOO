@@ -10,7 +10,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import consola.StudentConsola;
 import controller.StudentController;
 
 public class Student extends User implements Serializable {
