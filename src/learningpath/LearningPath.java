@@ -35,7 +35,7 @@ public class LearningPath implements Serializable {
 	private int version; // Version of the learning path
 	private LinkedList<Activity> activities; // List of activities in the learning path
 	private LinkedList<ProgressTracker> progressTrackers; // List of progress trackers for students enrolled in the
-	private LinkedList<String> reseñas;														// learning pathH
+	private  LinkedList<String> reseñas;														// learning pathH
 	public static LinkedList<LearningPath> allLearningPath = new LinkedList();
 
 	/**
@@ -64,7 +64,8 @@ public class LearningPath implements Serializable {
 		this.modificationDate = new Date(); // Set update date to current date
 		this.version = 1; // Initial version is set to 1
 		this.activities = new LinkedList<>(); // Initialize the list of activities
-		this.progressTrackers = new LinkedList<>(); // Initialize the list of progress trackers
+		this.progressTrackers = new LinkedList<>();
+		this.reseñas = new LinkedList<String>();// Initialize the list of progress trackers
 		try {
 		Student.mapaLearningPaths.put(this.id, this);
 		}
@@ -324,5 +325,15 @@ public class LearningPath implements Serializable {
 	public void updateModificationDate() {
 		this.modificationDate = new Date();
 	}
+
+	public LinkedList<String> getReseñas() {
+		return reseñas;
+	}
+
+	public void setReseñas(String rese) {
+		this.reseñas.add(rese);
+	}
+	
+	
 
 }

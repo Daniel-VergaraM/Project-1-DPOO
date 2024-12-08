@@ -19,6 +19,7 @@ public class ActivityTracker implements Serializable{
 	protected Date startDate;
 	protected Date completionDate;
 	private LinkedList<Integer> ratings;
+	private boolean completa;
 	
 	public ActivityTracker(Activity activity) {
 		this.activity = activity;
@@ -89,6 +90,18 @@ public class ActivityTracker implements Serializable{
 	    }
 	    return (double) sum / ratings.size();
 	}
+
+	
+	
+	public boolean isCompleta() {
+		return completa;
+	}
+
+
+	public void setCompleta(boolean completa) {
+		this.completa = completa;
+	}
+
 
 	public void recordActivityStart() {
 		this.completionStatus = "In Progress";

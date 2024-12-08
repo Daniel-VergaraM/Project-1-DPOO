@@ -120,6 +120,8 @@ public abstract class Activity implements Serializable{
         this.followUpActivities.remove(index);
     }
     
+    
+    
     public abstract void doActivity();
 
 }

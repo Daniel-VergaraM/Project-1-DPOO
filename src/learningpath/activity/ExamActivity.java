@@ -1,12 +1,13 @@
 package learningpath.activity;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 import learningpath.question.OpenQuestion;
 import learningpath.question.MultipleOptionQuestion;
 
-public class ExamActivity extends Activity {
+public class ExamActivity extends Activity implements Serializable{
 
 	/**
 	 * 

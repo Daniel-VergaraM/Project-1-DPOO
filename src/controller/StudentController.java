@@ -21,7 +21,7 @@ public class StudentController extends Controller implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	public static ArrayList<Student> arrayStudents = new ArrayList<Student>();
-    private LearningPath currentLearningPath;
+    private LearningPath currentLearningPath = null;;
     private ProgressTracker currentProgressTracker;
     private ActivityTracker currentActivityTracker;
     private LinkedList<LearningPath> learningPathsByInterest;

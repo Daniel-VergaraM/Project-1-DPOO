@@ -21,7 +21,6 @@ public class Student extends User implements Serializable {
     private LearningPath learningPathStudent;
     public final static String ROLE = "STUDENT";
     private HashMap<LearningPath, String> resenas = new HashMap<>();
-    private StudentConsola viewStudent;
     public static HashMap<String, LearningPath> mapaLearningPaths = new HashMap<>();;
     
     public Student(String username, String password) {
@@ -95,14 +94,14 @@ public class Student extends User implements Serializable {
     }
     
     
-    public StudentConsola getViewStudent() 
-    {
-    	return viewStudent;
-    }
-    
-    public void setViewStudent(StudentConsola viewStudent) {
-		this.viewStudent = viewStudent;
+	public LearningPath getLearningPathStudent() {
+		return learningPathStudent;
 	}
+
+	public void setLearningPathStudent(LearningPath learningPathStudent) {
+		this.learningPathStudent = learningPathStudent;
+	}
+    
     
     
 }

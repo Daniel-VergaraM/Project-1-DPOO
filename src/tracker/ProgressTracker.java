@@ -88,7 +88,7 @@ public class ProgressTracker implements Serializable{
 		return progress;
 	}
 
-	public boolean getCompletionStatus() {
+	public Boolean getCompletionStatus() {
 		return completionStatus;
 	}
 	
@@ -128,6 +128,12 @@ public class ProgressTracker implements Serializable{
 		activityTracker.recordActivityCompletion();
 		calculateProgress();
 	}
+
+	public void setProgress(float progress) {
+		this.progress = progress;
+	}
+	
+	
 
 
 }
