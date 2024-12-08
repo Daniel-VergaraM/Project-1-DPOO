@@ -120,7 +120,7 @@ public class MainApp {
             JOptionPane.showMessageDialog(createUserDialog, "Usuario creado exitosamente.");
             createUserDialog.dispose();
         });
-
+        
         createUserDialog.setVisible(true);
     }
     

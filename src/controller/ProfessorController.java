@@ -218,6 +218,13 @@ public class ProfessorController extends Controller {
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
+	
+	public void createTrueFalseActivity(String title, String description, String objective, int expectedDuration,
+			boolean mandatory, LinkedList<TrueFalseQuestion> questions) {
+		Activity newActivity = professor.createTrueFalseActivity(title, description, objective, expectedDuration,
+				mandatory, questions);
+		activityHashMap.put(newActivity.getId(), newActivity);
+	}
 
 
 }

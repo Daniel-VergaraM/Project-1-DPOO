@@ -118,7 +118,7 @@ public class StudentGUI {
         new CalificarActividadGUI(studentCont);
     }
     private void consultarProgreso(StudentController studentCont) {
-        JOptionPane.showMessageDialog(null, "Implementar lógica de consultar progreso");
+        JOptionPane.showMessageDialog(null, "A continuación el progreso de los LearningPaths");
         new ConsultarProgresoGUI(studentCont);
     }
 }

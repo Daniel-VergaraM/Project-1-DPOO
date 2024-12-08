@@ -22,6 +22,10 @@ public abstract class Activity implements Serializable{
     protected LinkedList<ActivityTracker> activityTrackers;
     protected LinkedList<Activity> prerequisites;
     protected LinkedList<Activity> followUpActivities;
+	private boolean done = false;
+	public static String TYPE = "activity";
+
+
     
     public Activity(String title, String description, String objective, int expectedDuration, boolean mandatory) {
         Generator u = Generator.getInstance();
@@ -120,8 +124,25 @@ public abstract class Activity implements Serializable{
         this.followUpActivities.remove(index);
     }
     
+	public boolean isDone() {
+		return this.done;
+	}
+	
+	public void setDone(boolean done) {
+		this.done = done;
+	}
+    
+	
     
     
-    public abstract void doActivity();
+    public static String getTYPE() {
+		return TYPE;
+	}
+
+	public static void setTYPE(String tYPE) {
+		TYPE = tYPE;
+	}
+
+	public abstract void doActivity();
 
 }

@@ -244,6 +244,15 @@ public class Professor extends User implements Serializable{
 	public ProfessorConsola getViewProfessor() {
 		return viewProfessor;
 	}
+	
+	public Activity createTrueFalseActivity(String title, String description, String objective, int expectedDuration,
+			boolean mandatory, LinkedList<TrueFalseQuestion> question) {
+
+		Activity activity = new TrueFalseActivity(title, description, objective, expectedDuration, mandatory, question);
+		createdActivities.add(activity);
+		return activity;
+	}
+
 
 
     
