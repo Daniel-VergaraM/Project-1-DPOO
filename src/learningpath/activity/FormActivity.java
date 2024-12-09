@@ -12,6 +12,8 @@ public class FormActivity extends Activity {
 	 */
 	private static final long serialVersionUID = 1L;
 	private LinkedList<OpenQuestion> questions;
+	public String TYPE = "form";
+
 
 	public FormActivity(String title, String description, String objective, int expectedDuration, boolean mandatory,
 			LinkedList<OpenQuestion> questions) {

@@ -14,6 +14,8 @@ public class QuizActivity extends Activity {
 	private static final long serialVersionUID = 1L;
 	private double minScore;
 	private LinkedList<MultipleOptionQuestion> questions;
+	public String TYPE = "quiz";
+
 
 	public QuizActivity(String title, String description, String objective, int expectedDuration, boolean mandatory,
 						LinkedList<MultipleOptionQuestion> questions, double minScore) {

@@ -15,6 +15,8 @@ public class ExamActivity extends Activity implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private LinkedList<OpenQuestion> openQuestions;
 	private LinkedList<MultipleOptionQuestion> MOQuestions;
+	public static String TYPE = "exam";
+
 
 	public ExamActivity(String title, String description, String objective, int expectedDuration, boolean mandatory,
 			LinkedList<OpenQuestion> openQuestions, LinkedList<MultipleOptionQuestion> MOQuestions) {
@@ -23,7 +25,7 @@ public class ExamActivity extends Activity implements Serializable{
 		this.openQuestions = openQuestions != null ? openQuestions : new LinkedList<>();
 		this.MOQuestions = MOQuestions != null ? MOQuestions : new LinkedList<>();
 	}
-
+	
 	public LinkedList<OpenQuestion> getOpenQuestions() {
 		return openQuestions;
 	}

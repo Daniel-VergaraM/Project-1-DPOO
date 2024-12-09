@@ -16,6 +16,7 @@ import learningpath.activity.ResourceActivity;
 import learningpath.question.MultipleOptionQuestion;
 import learningpath.question.OpenQuestion;
 import persistencia.CentralPersistencia;
+import tracker.ProgressTracker;
 import users.Professor;
 import users.Student;
 
@@ -44,7 +45,7 @@ public class StudentGUI {
         this.panelManager = new PanelManager();
         createAndShowGUI(studentController);
     }
-
+    
     private void createAndShowGUI(StudentController studentController) {
         JFrame frame = new JFrame("Portal del Estudiante");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,7 +57,7 @@ public class StudentGUI {
         panelSup.setLayout(new BorderLayout());
         panelSup.setBackground(Color.PINK);  
         JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(7,1) );
+        mainPanel.setLayout(new GridLayout(8,1) );
         JLabel welcomeLabel = new JLabel("Bienvenido estudiante");
         welcomeLabel.setForeground(Color.white);
         welcomeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -67,24 +68,30 @@ public class StudentGUI {
         JButton btnGenerarResena = new JButton("Generar una reseña para un LearningPath");
         JButton btnCalificarActividad = new JButton("Calificar una actividad");
         JButton btnConsultarProgreso = new JButton("Consultar el progreso de un LearningPath");
+        JButton btnRealizarActividad = new JButton("Realizar actividades");
+
         btnVerLearningPaths.setBackground(new Color(245, 245, 220));
         btnInscribirLearningPath.setBackground(new Color(245, 245, 220));	
         btnVerActividades.setBackground(new Color(245, 245, 220));
         btnGenerarResena.setBackground(new Color(245, 245, 220));
         btnCalificarActividad.setBackground(new Color(245, 245, 220));
         btnConsultarProgreso.setBackground(new Color(245, 245, 220));
-               mainPanel.add(btnVerLearningPaths);
+        btnRealizarActividad.setBackground(new Color(245, 245, 220));
+
+        mainPanel.add(btnVerLearningPaths);
         mainPanel.add(btnInscribirLearningPath);
         mainPanel.add(btnVerActividades);
         mainPanel.add(btnGenerarResena);
         mainPanel.add(btnCalificarActividad);
         mainPanel.add(btnConsultarProgreso);
+        mainPanel.add(btnRealizarActividad);
         btnVerLearningPaths.addActionListener(e -> mostrarLearningPaths(studentController));
         btnInscribirLearningPath.addActionListener(e -> inscribirLearningPath(studentController));
         btnVerActividades.addActionListener(e -> verActividadesLearningPath(studentController));
         btnGenerarResena.addActionListener(e -> generarResena(studentController));
         btnCalificarActividad.addActionListener(e -> calificarActividad(studentController));
         btnConsultarProgreso.addActionListener(e -> consultarProgreso(studentController));
+        btnRealizarActividad.addActionListener(e -> realizarActividad(studentController));
 
         panelManager.addPanel("main", mainPanel);
         frame.add(panelSup, BorderLayout.NORTH);
@@ -120,5 +127,9 @@ public class StudentGUI {
     private void consultarProgreso(StudentController studentCont) {
         JOptionPane.showMessageDialog(null, "A continuación el progreso de los LearningPaths");
         new ConsultarProgresoGUI(studentCont);
+    }
+    private void realizarActividad(StudentController studentCont) {
+        JOptionPane.showMessageDialog(null, "A continuación las actividades disponibles");
+        new RealizarActividadGUI(studentCont);
     }
 }

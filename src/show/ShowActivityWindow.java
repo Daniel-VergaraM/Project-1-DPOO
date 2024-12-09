@@ -2,6 +2,7 @@ package show;
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -58,7 +59,9 @@ public class ShowActivityWindow extends JFrame {
 
 	
 	public ShowActivityWindow(Controller controller) {
+		
 		super();
+		this.setBackground(new Color(176, 242, 180));
 		this.controller = controller;
 		loadActivities();
 		currentActivity = activities.get(currentActivityIndex);
@@ -77,6 +80,7 @@ public class ShowActivityWindow extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLocationRelativeTo(null);
 		pack();
+		this.setForeground(Color.PINK);
 		repaint();
 		centreWindow();
 		setResizable(false);
@@ -210,6 +214,7 @@ public class ShowActivityWindow extends JFrame {
 
 			setTitle("Bloque Neon | Actividad - " + currentActivity.getId());
 			mainPanel.updateDetails();
+			mainPanel.setBackground(Color.PINK);
 			repaint();
 		} else {
 			JOptionPane.showMessageDialog(this, "No hay una actividad siguiente.", "Error", JOptionPane.ERROR_MESSAGE);

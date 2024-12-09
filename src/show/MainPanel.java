@@ -2,6 +2,7 @@ package show;
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -43,12 +44,15 @@ public class MainPanel extends JPanel implements ActionListener {
 
 	public MainPanel(ShowActivityWindow main) {
 		super();
+		this.setBackground(new Color(176, 242, 180));
 		this.main = main;
 		panelIzquierda = new DetailsPanel(this);
 		panelDerecha = new IconFollowUpPanel(this);
 		JPanel panel = new JPanel();
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 25, 25));
 		doButton = new JButton("Do");
+		doButton.setBackground(Color.PINK);
+		doButton.setForeground(Color.WHITE);
 		doButton.setActionCommand(OPEN_WINDOW);
 		doButton.addActionListener(this);
 		doButton.setPreferredSize(dim);

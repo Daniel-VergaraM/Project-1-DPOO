@@ -23,6 +23,7 @@ public class IconDisplayPanel extends JPanel {
 
 	public IconDisplayPanel(String type) {
 		super();
+		this.setBackground(new Color(176, 242, 180));
 		lblIcon = new JLabel();
 		lblIcon.setLayout(new BorderLayout());
 		lblIcon.setPreferredSize(new Dimension(311, 290));

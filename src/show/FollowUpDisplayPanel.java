@@ -1,6 +1,7 @@
 package show;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.HashSet;
@@ -31,7 +32,7 @@ public class FollowUpDisplayPanel extends JPanel {
 	public FollowUpDisplayPanel(IconFollowUpPanel main) {
 		super();
 		this.main = main;
-		
+		this.setBackground(new Color(176, 242, 180));
 		JPanel panel = new JPanel(new GridLayout(1, 1, 100, 100));
 		panel.setPreferredSize(new Dimension(8 * 33, 5 * 33));
 		panel.setBorder(new TitledBorder("Follow Up Activities"));

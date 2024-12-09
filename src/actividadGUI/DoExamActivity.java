@@ -2,6 +2,7 @@ package actividadGUI;
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.KeyAdapter;
@@ -52,6 +53,7 @@ public class DoExamActivity extends DoTemplate {
 	private void initializeCustomPanel() {
 
 		JPanel questionPanel = new JPanel(new BorderLayout(10, 10));
+		questionPanel.setBackground(new Color(176,242,180));
 
 		questionLabel = new JLabel("", JLabel.CENTER);
 		questionLabel.setFont(new Font("Arial", Font.BOLD, 18));
@@ -99,6 +101,13 @@ public class DoExamActivity extends DoTemplate {
 		previousButton = new JButton("Previous");
 		nextButton = new JButton("Next");
 		sendButton = new JButton("Send");
+		sendButton.setBackground(Color.PINK);
+		nextButton.setBackground(Color.PINK);
+		previousButton.setBackground(Color.PINK);
+		sendButton.setForeground(Color.WHITE);
+		nextButton.setForeground(Color.WHITE);
+		previousButton.setForeground(Color.WHITE);
+
 
 		previousButton.addActionListener(e -> navigateToPreviousQuestion());
 		nextButton.addActionListener(e -> navigateToNextQuestion());

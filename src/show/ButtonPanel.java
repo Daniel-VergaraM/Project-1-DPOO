@@ -27,6 +27,7 @@ public class ButtonPanel extends JPanel implements ActionListener, KeyListener {
 	public ButtonPanel(ShowActivityWindow main) {
 		super();
 		this.main = main;
+		this.setBackground(new Color(176, 242, 180));
 		setLayout(new FlowLayout(FlowLayout.CENTER, 150, 10));
 		JButton btnPrevious = new JButton("Previous");
 		btnPrevious.setSize(67, 33);

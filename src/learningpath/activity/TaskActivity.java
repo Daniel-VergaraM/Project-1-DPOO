@@ -9,6 +9,8 @@ public class TaskActivity extends Activity {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String toDo;
+	public String TYPE = "task";
+
 
 	public TaskActivity(String title, String description, String objective, int expectedDuration, boolean mandatory,
 			String toDo) {

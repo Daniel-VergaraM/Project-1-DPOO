@@ -2,6 +2,7 @@ package show;
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -45,7 +46,7 @@ public class DetailsPanel extends JPanel {
 		JLabel cosoDuracion = new JLabel("Expected Duration: ");
 		JLabel cosoMandatory = new JLabel("Mandatory: ");
 		JLabel cosoDo = new JLabel("Done: ");
-
+		this.setBackground(new Color(176, 242, 180));
 		lblTitle = new JLabel();
 		lblTitle.setFont(font);
 

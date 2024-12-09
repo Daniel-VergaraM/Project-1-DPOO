@@ -12,7 +12,9 @@ public class TrueFalseActivity extends Activity implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 1L;
 	private LinkedList<TrueFalseQuestion> questions;
+	public String TYPE = "truefalse";
 
+	
 	public TrueFalseActivity(String title, String description, String objective, int expectedDuration, boolean mandatory,
 			LinkedList<TrueFalseQuestion> questions) {
 		super(title, description, objective, expectedDuration, mandatory);

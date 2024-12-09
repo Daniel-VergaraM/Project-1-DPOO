@@ -1,6 +1,7 @@
 package show;
 
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,7 @@ public class IconFollowUpPanel extends JPanel {
 	public IconFollowUpPanel(MainPanel main) {
 		super();
 		this.main = main;
+		this.setBackground(new Color(176, 242, 180));
 		iconDisplay = new IconDisplayPanel("task");
 		followUpDisplay = new FollowUpDisplayPanel(this);
 		setLayout(new GridLayout(2, 1, 66, 33));
