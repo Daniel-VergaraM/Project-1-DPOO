@@ -37,13 +37,22 @@ public class ProfessorController extends Controller {
     }
 
     // Query methods
+
+
+    public LearningPath getCurrentLearningPath() {
+        return currentLearningPath;
+    }
+
+    public Activity getCurrentActivity() {
+        return currentActivity;
+    }
+
     /**
      * Retrieves the learning paths associated with a professor.
      *
-     * @param professor The professor whose learning paths are to be retrieved.
      * @return A linked list of learning paths associated with the professor.
      */
-    public LinkedList<LearningPath> getProfessorLearningPaths(Professor professor) {
+    public LinkedList<LearningPath> getProfessorLearningPaths() {
         return professor.getCreatedLearningPaths();
     }
 

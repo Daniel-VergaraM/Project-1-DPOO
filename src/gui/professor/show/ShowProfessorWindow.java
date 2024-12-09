@@ -5,24 +5,24 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-import controller.Controller;
+import controller.ProfessorController;
 
 public class ShowProfessorWindow extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
-    private Controller controller;
-
     private JButton option1, option2, option3;
 
-    public ShowProfessorWindow() {
+    private ProfessorController controller;
+
+    public ShowProfessorWindow( ProfessorController controller) {
         super("Menu Window");
 
         // Set layout
         setLayout(new BorderLayout());
 
         // Create welcome label
-        JLabel welcomeLabel = new JLabel("Bienvenido profesor!", JLabel.CENTER);
+        JLabel welcomeLabel = new JLabel("Bienvenido profesor " + controller.getProfessor().getUsername(), JLabel.CENTER);
         welcomeLabel.setOpaque(true);
         welcomeLabel.setBackground(Color.decode("#febfc9"));
         welcomeLabel.setFont(new Font("Arial", Font.BOLD, 16)); // Set larger font size
@@ -64,18 +64,13 @@ public class ShowProfessorWindow extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String selectedOption = "";
         if (e.getSource() == option1) {
-            selectedOption = "Option 1";
+            new ManageLearningPathsWindow(controller);
         } else if (e.getSource() == option2) {
-            selectedOption = "Option 2";
+            new ManageActivitiesWindow(controller);
         } else if (e.getSource() == option3) {
-            selectedOption = "Option 3";
+            dispose();
         }
-        JOptionPane.showMessageDialog(this, "You selected: " + selectedOption);
     }
 
-    public static void main(String[] args) {
-        new ShowProfessorWindow();
-    }
 }
