@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Controller {
 
-    public HashMap<String, User> userHashMap;
+    public static HashMap<String, User> userHashMap;
     public HashMap<String, LearningPath> learningPathHashMap;
     public HashMap<String, Activity> activityHashMap;
     public User currentUser;

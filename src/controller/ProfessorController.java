@@ -12,9 +12,9 @@ import users.User;
 
 public class ProfessorController extends Controller {
 
-	public Professor professor;
-    private LearningPath currentLearningPath;
-    private Activity currentActivity;
+	public Professor professor = null;
+    private LearningPath currentLearningPath = null;
+    private Activity currentActivity = null ;
     public static ArrayList<Professor> arrayProfes = new ArrayList<Professor>();
 
     /**
@@ -40,10 +40,10 @@ public class ProfessorController extends Controller {
      * @param professor The professor whose learning paths are to be retrieved.
      * @return A linked list of learning paths associated with the professor.
      */
-    public LinkedList<LearningPath> getProfessorLearningPaths(Professor professor) {
+    public LinkedList<LearningPath> getProfessorLearningPaths() {
         return professor.getCreatedLearningPaths();
     }
-
+    
     public void setCurrentLearningPath(LearningPath learningPath) {
         currentLearningPath = learningPath;
     }
@@ -82,6 +82,10 @@ public class ProfessorController extends Controller {
 
     public Activity getActivityInLearningPathByIndex(int index) {
         currentActivity = currentLearningPath.getActivityByIndex(index);
+        return currentActivity;
+    }
+    
+    public Activity getCurrentActivity() {
         return currentActivity;
     }
 
@@ -226,5 +230,10 @@ public class ProfessorController extends Controller {
 		activityHashMap.put(newActivity.getId(), newActivity);
 	}
 
+	public LearningPath getCurrentLearningPath() {
+		return currentLearningPath;
+	}
+
+	
 
 }

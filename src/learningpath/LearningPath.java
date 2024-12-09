@@ -68,6 +68,7 @@ public class LearningPath implements Serializable {
 		this.reseñas = new LinkedList<String>();// Initialize the list of progress trackers
 		try {
 		Student.mapaLearningPaths.put(this.id, this);
+		allLearningPath.add(this);
 		}
 		catch(Exception e)
 		{

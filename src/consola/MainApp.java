@@ -7,7 +7,10 @@ import controller.Controller;
 import controller.ProfessorController;
 import controller.StudentController;
 import persistencia.CentralPersistencia;
+import professorGUI.ShowProfessorWindow;
 import studentGUI.StudentGUI;
+import users.Professor;
+import users.Student;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -59,7 +62,7 @@ public class MainApp {
         loginPanel.add(new JLabel("Contraseña:"));
         loginPanel.add(passwordField);
         
-        
+       
         paneInfe.add(loginButton);
         paneInfe.add(createUserButton);
 
@@ -72,6 +75,7 @@ public class MainApp {
                 controller = newController;
                 if (controller instanceof ProfessorController) {
                     JOptionPane.showMessageDialog(frame, "Bienvenido Profesor");
+                    new ShowProfessorWindow((ProfessorController)controller);
                 } else if (controller instanceof StudentController) {
                     JOptionPane.showMessageDialog(frame, "Bienvenido Estudiante");
                     new StudentGUI((StudentController) controller);
@@ -117,6 +121,18 @@ public class MainApp {
             String userType = userTypeComboBox.getSelectedIndex() == 0 ? "PROFESSOR" : "STUDENT";
 
             controller.registerUser(username, password, userType);
+            if(userType == "PROFESSOR") {
+            	Professor profe = new Professor(username, password);
+            	controller.setCurrentUser(profe);
+            	controller.registerProfessor(username, password);
+          
+            }
+            else{
+            	Student estudiante = new Student(username, password);
+            	controller.setCurrentUser(estudiante);
+            	controller.registerStudent(username, password);
+            	 
+            }
             JOptionPane.showMessageDialog(createUserDialog, "Usuario creado exitosamente.");
             createUserDialog.dispose();
         });
